@@ -1,0 +1,32 @@
+body {
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
+}
+.form {
+  display: block;
+  border: 0px solid rgb(0, 145, 255);
+  text-align: center;
+  padding: 1em;
+}
+.result {
+  color: rgb(0, 145, 255);
+  font-weight: bold;
+  font-size: 1.5em;
+  text-transform: capitalize;
+}
+fieldset {
+  text-align: left;
+  padding-left: 3em;
+  color: rgb(0, 145, 255);
+  border: 1px solid rgb(0, 145, 255);
+}
+input[type="text"] {
+  width: 40%;
+  height: 2em;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  margin: 2em auto;
+}
