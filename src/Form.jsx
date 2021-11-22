@@ -1,26 +1,24 @@
 import React from "react";
 import "./index.css";
 import FormTextInput from "./FormTextInput";
+import { useState } from "react";
 
-export default class Form extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.state = { value: this.props.title };
-  }
-  handleChange(e) {
+function Form(props) {
+  const [value, setValue] = useState(props.title);
+  const handleChange = (e) => {
     let target = e.target;
-    if (!e.target.value) this.setState(() => ({ value: this.props.title }));
+    if (!e.target.value) setValue(() => ({ value: props.title }));
     else {
-      this.setState(() => ({ value: target.value }));
+      setValue(() => ({ value: target.value }));
     }
-  }
-  render() {
-    return (
-      <div className="form">
-        <h2 className="result">{this.state.value}</h2>
-        <FormTextInput onChange={this.handleChange} label="Our label" />
-      </div>
-    );
-  }
+  };
+
+  return (
+    <div className="form">
+      <h2 className="result">{value.value}</h2>
+      <FormTextInput onChange={handleChange} label="Our label" />
+    </div>
+  );
 }
+
+export default Form;
