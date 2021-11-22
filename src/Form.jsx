@@ -4,18 +4,18 @@ import FormTextInput from "./FormTextInput";
 import { useState } from "react";
 
 function Form(props) {
-  const [value, setValue] = useState(props.title);
+  const [title, setTitle] = useState(props.title);
   const handleChange = (e) => {
     let target = e.target;
-    if (!e.target.value) setValue(() => ({ value: props.title }));
+    if (!e.target.value) setTitle(() => ({ value: props.title }));
     else {
-      setValue(() => ({ value: target.value }));
+      setTitle(() => ({ value: target.value }));
     }
   };
 
   return (
     <div className="form">
-      <h2 className="result">{value.value}</h2>
+      <h2 className="result">{title.value}</h2>
       <FormTextInput onChange={handleChange} label="Our label" />
     </div>
   );
